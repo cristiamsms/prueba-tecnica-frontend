@@ -4,7 +4,7 @@ const initialState:any={
  ]
 };
 
-export const planReducer = (state=initialState,action) => 
+export const planReducer = (state=initialState,action:any) => 
 {
     switch (action.type) {
         case types.planAddNew:
@@ -19,14 +19,14 @@ export const planReducer = (state=initialState,action) =>
             return{
                 ...state,
                 planes:state.planes.map(
-                    e =>(e.id === action.payload.id) ? action.payload : e
+                    (e:any) =>(e.id === action.payload.id) ? action.payload : e
                 )
             }
         case types.planDeleted:
             return{
                 ...state,
                 planes:state.planes.filter(
-                    e =>(e.id !== state.activePlan.id) 
+                    (e:any) =>(e.id !== state.activePlan.id) 
                 ),
                 activePlan:null
             }

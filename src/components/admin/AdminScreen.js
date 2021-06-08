@@ -42,7 +42,7 @@ const AdminScreen = () => {
     react_1.useEffect(() => {
         dispatch(plans_1.planStartLoading());
         setloading(false);
-    }, [dispatch, plan]);
+    }, [dispatch, planes]);
     const openCollapse = () => {
         setOnCollapse(!onCollapse);
     };

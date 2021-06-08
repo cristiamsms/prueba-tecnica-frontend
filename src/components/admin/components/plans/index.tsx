@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { planStartDelete, planStartUpdated } from "../../../../actions/plans";
+import { planStartDelete, planStartLoading, planStartUpdated } from "../../../../actions/plans";
 import Details from "../details";
 
 import "./style.css";
 
-function Plans({ items }) {
+function Plans({ items }:any) {
   const [onCollapse, setOnCollapse] = useState(false);
   const [planes, setPlanes] = useState(items);
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function Plans({ items }) {
     setOnCollapse(!onCollapse);
   };
 
-  const onChange = (event) => {
+  const onChange = (event:any) => {
     setPlanes({ ...planes, [event.target.name]: event.target.value });
   };
 
@@ -27,12 +27,13 @@ function Plans({ items }) {
   const handleSubmit = () => {
     dispatch(planStartUpdated(planes));
     openCollapse();
+  
   }
   const handleDelete = () =>{
     
       dispatch(planStartDelete(planes.id));
       openCollapse();
-
+      dispatch(planStartLoading());
   
   }
 
@@ -91,7 +92,7 @@ function Plans({ items }) {
               <p>Lista de detalles</p>
               <ul>
                 {details.length !== 0
-                  ? details.map((list, index) => {
+                  ? details.map((list:any, index:any) => {
                       return (
                         <Details
                           details={details}
@@ -102,7 +103,7 @@ function Plans({ items }) {
                         />
                       );
                     })
-                  : JSON.parse(planes?.detalle).map((list, index) => {
+                  : JSON.parse(planes?.detalle).map((list:any, index:any) => {
                       return (
                         <Details
                           details={details}

@@ -49,7 +49,9 @@ function Plans({ items }) {
     };
     const handleDelete = () => {
         dispatch(plans_1.planStartDelete(planes.id));
+        dispatch(plans_1.planStartLoading());
         openCollapse();
+  
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: "card alert-dark", onClick: openCollapse },

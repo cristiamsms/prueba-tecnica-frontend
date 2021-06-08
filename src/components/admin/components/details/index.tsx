@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./style.css";
 
-function Details({ list, setDetails, id, details }) {
+function Details({ list, setDetails, id, details }:any) {
   const [edit, setEdit] = useState(false);
   const [valueInput, setValueInput] = useState([]);
-  const onChange = (event) => {
+  const onChange = (event:any) => {
     setValueInput(event.target.value);
   };
 

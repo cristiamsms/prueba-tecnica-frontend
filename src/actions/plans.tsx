@@ -3,8 +3,8 @@ import { fetchSintoken } from "../components/helpers/fetch";
 import { types } from "../types/types";
 
 
-export const planStartAddNew = ( plan ) => {
-    return async(dispatch) => {
+export const planStartAddNew = ( plan:any ) => {
+    return async(dispatch:any) => {
  
  
      try {
@@ -26,13 +26,13 @@ export const planStartAddNew = ( plan ) => {
     }
     
  }
- const planAddNew=(plan)=> ({
+ const planAddNew=(plan:any)=> ({
     type:types.planAddNew,
     payload:plan
 })
 
 export const planStartLoading = () => {
-    return async(dispatch) => {
+    return async(dispatch:any) => {
         try {
          
             const resp= await fetchSintoken('planes',{}); 
@@ -55,13 +55,13 @@ export const planStartLoading = () => {
     }
 }
 
-const planesLoaded = (planes) => ({
+const planesLoaded = (planes:any) => ({
     type:types.planLoaded,
     payload:planes
 })
 
-export const planStartUpdated = (plan) =>{
-    return async(dispatch) => {
+export const planStartUpdated = (plan:any) =>{
+    return async(dispatch:any) => {
         try {
             
             const resp= await fetchSintoken(`planes/${plan.id}`,plan,'PUT'); 
@@ -85,13 +85,13 @@ export const planStartUpdated = (plan) =>{
 
     }
 }
- const planUpdated=(plan)=>({
+ const planUpdated=(plan:any)=>({
     type:types.planUpdate,
     payload:plan
 })
 
-export const planStartDelete = (id) =>{
-    return async(dispatch) => {
+export const planStartDelete = (id:any) =>{
+    return async(dispatch:any) => {
         try {
             
             const resp= await fetchSintoken(`planes/${id}`,{},'DELETE'); 

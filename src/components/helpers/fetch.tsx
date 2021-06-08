@@ -1,5 +1,5 @@
-const fetchSintoken = (endpoint, data, method = "GET") => {
-  const url = `http://9d2c51813960.ngrok.io/api/${endpoint}`;
+const fetchSintoken = (endpoint:any, data:any, method = "GET") => {
+  const url = `http://localhost:8080/api/${endpoint}`;
   if (method === "GET") {
     return fetch(url);
   } else {
@@ -13,8 +13,8 @@ const fetchSintoken = (endpoint, data, method = "GET") => {
   }
 };
 
-const fetchContoken = (endpoint, data, method = "GET") => {
-  const url = `http://9d2c51813960.ngrok.io/api/${endpoint}`;
+const fetchContoken = (endpoint:any, data:any, method = "GET") => {
+  const url = `http://localhost:8080/api/${endpoint}`;
   const token = localStorage.getItem("token") || "";
   if (method === "GET") {
     return fetch(url, {

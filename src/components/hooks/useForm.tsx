@@ -8,7 +8,7 @@ export const useForm = (initialState={}) => {
 
     }
 
-    const handleInputChange=({target})=>
+    const handleInputChange=({target}:any)=>
     {
         
         setvalue({...value,

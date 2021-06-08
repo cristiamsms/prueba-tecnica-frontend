@@ -4,41 +4,35 @@ import { planStartAddNew, planStartLoading } from "../../actions/plans";
 import { Navbar } from "../ui/Navbar";
 import Plans from "./components/plans";
 import "./style.css";
-interface Planes {
-  titulo: string,
-  valor: number,
-  descripcion: string,
-  detalle: string
 
-}
 export const AdminScreen = () => {
   let dispatch = useDispatch();
   const [onCollapse, setOnCollapse] = useState(false);
   const plan = useSelector((state:RootStateOrAny) => state.plan);
   const [loading, setloading] = useState(true);
-  const [planes, setplanes] = useState<Planes>();
+  const [planes, setplanes] = useState<any>();
   
-  const [inputs, setInputs] = useState([]);
+  const [inputs, setInputs] = useState<any>([]);
   console.log(inputs);
   const [valueInput, setValueInput] = useState("");
 console.log(plan.planes);
   useEffect(() => {
     dispatch(planStartLoading());
     setloading(false);
-  }, [dispatch, plan]);
+  }, [dispatch, planes]);
   const openCollapse = () => {
     setOnCollapse(!onCollapse);
    
     
   };
   const Details = () => {
-    setInputs(inputs.filter((clean) => clean !== null));
+    setInputs(inputs.filter((clean:{}) => clean !== null));
 
     setInputs([...inputs, ""]);
   };
 
   const handleSubmit = () => {
-    setInputs(inputs.filter((clean) => clean !== null));
+    setInputs(inputs.filter((clean:{}) => clean !== null));
 
     dispatch(planStartAddNew({ ...planes, detalle: JSON.stringify(inputs) }));
     openCollapse();
@@ -48,23 +42,23 @@ console.log(plan.planes);
   }
   
 
-  const handleChange = (event) => {
+  const handleChange = (event:any) => {
     setValueInput(event.target.value);
   };
 
-  const save = (index) => {
-    setInputs(inputs.filter((clean) => clean !== null && clean !== ""));
+  const save = (index:any) => {
+    setInputs(inputs.filter((clean:{}) => clean !== null && clean !== ""));
     setInputs([...inputs, (inputs[index] = valueInput)]);
     setValueInput("");
   };
 
-  const remove = (item) => {
-    setInputs(inputs.filter((clean) => clean !== null && clean !== ""));
-    setInputs(inputs.filter((remove) => remove !== item));
+  const remove = (item:any) => {
+    setInputs(inputs.filter((clean:{}) => clean !== null && clean !== ""));
+    setInputs(inputs.filter((remove:{}) => remove !== item));
   };
 
-  const onChange = (event) => {
-    setInputs(inputs.filter((clean) => clean !== null && clean !== ""));
+  const onChange = (event:any) => {
+    setInputs(inputs.filter((clean:{}) => clean !== null && clean !== ""));
     setplanes({ ...planes, [event.target.name]: event.target.value });
   };
   if (loading) {
@@ -74,7 +68,7 @@ console.log(plan.planes);
     <>
       <Navbar />
       <h1> Planes</h1>
-      { plan.planes.map((items, index) => {
+      { plan.planes.map((items:any, index:any) => {
         return (items.estado) && <Plans key={index} items={items} />;
       })}
       <p className="add-new" onClick={openCollapse}>
@@ -126,7 +120,7 @@ console.log(plan.planes);
             <div className="mb-3">
               <p>Lista de detalles</p>
               <ul>
-                {inputs.map((item, index) => (
+                {inputs.map((item:any, index:any) => (
                   <li>
                     <input
                       key={index}

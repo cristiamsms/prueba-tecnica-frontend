@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchContoken = exports.fetchSintoken = void 0;
 const fetchSintoken = (endpoint, data, method = "GET") => {
-    const url = `http://9d2c51813960.ngrok.io/api/${endpoint}`;
+    const url = `http://localhost:8080/api/${endpoint}`;
     if (method === "GET") {
         return fetch(url);
     }
@@ -18,7 +18,7 @@ const fetchSintoken = (endpoint, data, method = "GET") => {
 };
 exports.fetchSintoken = fetchSintoken;
 const fetchContoken = (endpoint, data, method = "GET") => {
-    const url = `http://9d2c51813960.ngrok.io/api/${endpoint}`;
+    const url = `http://localhost:8080/api/${endpoint}`;
     const token = localStorage.getItem("token") || "";
     if (method === "GET") {
         return fetch(url, {

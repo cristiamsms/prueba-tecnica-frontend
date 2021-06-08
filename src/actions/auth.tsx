@@ -2,10 +2,10 @@ import Swal from "sweetalert2"
 import { fetchContoken, fetchSintoken } from "../components/helpers/fetch"
 import { types } from "../types/types"
 
-export const startLogin =(email,password) =>
+export const startLogin =(email:any,password:any) =>
   
 {    
-    return async(dispatch)=>{   
+    return async(dispatch:any)=>{   
        const resp= await fetchSintoken('usuarios',{email,password},'POST')
         const body = await resp.json();
         const tiempo:any = new Date().getTime()
@@ -18,10 +18,11 @@ export const startLogin =(email,password) =>
         }else{
             Swal.fire('Error',body.msg,'error');
         }
+        
     }
 }
 export const startChecking =() => {
-    return async(dispatch) =>{
+    return async(dispatch:any) =>{
         const resp= await fetchContoken('usuarios/renew',{}); 
         const body = await resp.json();
         if(body.ok)
@@ -34,12 +35,12 @@ export const startChecking =() => {
 const checkingFinish = () => ({
     type:types.authCheckingFinish
 })
-const login = (user) =>({
+const login = (user:any) =>({
     type:types.authLogin,
     payload:user
 });
 export const startLogout = ()=>{
-    return (dispatch)=>{
+    return (dispatch:any)=>{
         localStorage.clear();
         dispatch(logout()); 
     }

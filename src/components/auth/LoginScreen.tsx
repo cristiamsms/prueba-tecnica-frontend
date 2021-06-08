@@ -16,7 +16,7 @@ export const LoginScreen = () => {
     
     const {lEmail,lPassword}=login;
     
-    const handleLogin=(e)=>{
+    const handleLogin=(e:any)=>{
         e.preventDefault();
      
         dispatch(startLogin(lEmail,lPassword));
@@ -24,7 +24,7 @@ export const LoginScreen = () => {
 
 
     }
-    const onChange = (event) => {
+    const onChange = (event:any) => {
         {
         
             setlogin({...login,

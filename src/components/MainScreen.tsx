@@ -28,7 +28,7 @@ export const MainScreen = () => {
       </div>
       <div className="container-carts">
         {plan.planes.map(
-          (item) => item && (item.estado) && <Carts price={item.valor} list={JSON.parse(item.detalle)} description={item.descripcion} title={item.titulo} />
+          (item:any) => item && (item.estado) && <Carts price={item.valor} list={JSON.parse(item.detalle)} description={item.descripcion} title={item.titulo} />
         )}
       </div>
     </>
