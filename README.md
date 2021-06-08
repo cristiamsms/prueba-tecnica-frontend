@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Prueba tecnica frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto esta realizado en react con typescript, redux, usando un jwt para la autenticación boostrap como framework de css y usando un patron de repositorio.
+estoy en proceso de desplegarlo me falta mejorar algunas cosas y las ire subiendo en el transcurso del dia.
+Backend: https://github.com/cristiamsms/prueba-tecnica-backend
+este es el backend del proyecto cualquier duda comunicarse con: cristianjesusmb@gmail.com 
+
+
 
 ## Available Scripts
 
