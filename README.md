@@ -1,6 +1,6 @@
 # Prueba tecnica frontend
 
-Este proyecto esta realizado en react con typescript, redux, usando un jwt para la autenticación boostrap como framework de css y usando un patron de repositorio.
+Este proyecto esta realizado en react con typescript, redux, usando un jwt para la autenticación bootstrap como framework de css y usando un patron de repositorio.
 estoy en proceso de desplegarlo me falta mejorar algunas cosas y las ire subiendo en el transcurso del dia.
 Backend: https://github.com/cristiamsms/prueba-tecnica-backend
 este es el backend del proyecto cualquier duda comunicarse con: cristianjesusmb@gmail.com 
