@@ -1,0 +1,8 @@
+li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+li span {
+  margin: 5px;
+}

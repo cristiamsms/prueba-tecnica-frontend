@@ -1,0 +1,35 @@
+.card {
+  margin: 10px;
+}
+.card-body {
+  font-weight: bold;
+}
+
+li p {
+  color: blueviolet;
+}
+
+.button-cancelar {
+  background-color: white;
+  color: blueviolet;
+  padding: 5px;
+  margin: 5px;
+  width: 120px;
+  border: 2px solid blueviolet;
+}
+.button-guardar {
+  background-color: blueviolet;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  width: 120px;
+  border: 2px solid blueviolet;
+}
+.button-borrar {
+  background-color: rgba(247, 33, 33, 0.897);
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  width: 120px;
+  border: 2px solid rgba(247, 33, 33, 0.897);
+}
